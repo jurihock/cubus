@@ -24,22 +24,9 @@ namespace Cubus
 
     public bool Equals(Shape other)
     {
-      if (this.Width != other.Width)
-      {
-        return false;
-      }
-
-      if (this.Height != other.Height)
-      {
-        return false;
-      }
-
-      if (this.Length != other.Length)
-      {
-        return false;
-      }
-
-      return true;
+      return (this.Width == other.Width) &&
+             (this.Height == other.Height) &&
+             (this.Length == other.Length);
     }
 
     public override bool Equals(object shape)
