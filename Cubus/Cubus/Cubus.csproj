@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Layouts\" />
+    <None Remove="Cubes\" />
+    <None Remove="Extensions\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Filters\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Filters\Func\" />
+    <None Remove="Filters\Color\" />
+    <None Remove="Filters\Compress\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layouts\" />
+    <Folder Include="Cubes\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Filters\Convert\" />
+    <Folder Include="Filters\Color\" />
+    <Folder Include="Filters\Compress\" />
+  </ItemGroup>
+</Project>
