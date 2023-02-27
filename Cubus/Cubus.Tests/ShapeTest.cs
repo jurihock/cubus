@@ -42,15 +42,15 @@ namespace Cubus.Tests
 
       var a = new Shape(10, 1, 1);
       var b = new Shape(1, 1, 10);
-      Assert.AreEqual(a.Equals(b), false);
+      Assert.AreNotEqual(a, b);
       Assert.AreEqual(a.CompareTo(b), 0);
       Assert.AreEqual(a.Volume.CompareTo(b.Volume), 0);
 
       var c = new Shape(1, 1);
       var d = c.Length(100);
+      Assert.AreNotEqual(c, d);
       Assert.AreEqual(c.Volume, 1);
       Assert.AreEqual(d.Volume, 100);
-      Assert.AreEqual(c.Equals(d), false);
       Assert.AreEqual(c.CompareTo(d), -99);
       Assert.AreEqual(d.CompareTo(c), +99);
       Assert.AreEqual(c.Volume.CompareTo(d.Volume), -1);

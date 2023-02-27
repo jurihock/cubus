@@ -8,6 +8,7 @@ namespace Cubus.Cubes
     public Func<int, int, int, T> Getter { get; private set; }
     public Action<int, int, int, T> Setter { get; private set; }
 
+    /// <inheritdoc/>
     public override T this[int x, int y, int z]
     {
       [MethodImpl(MethodImplOptions.AggressiveInlining)]

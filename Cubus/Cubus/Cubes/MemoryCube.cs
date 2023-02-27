@@ -11,6 +11,7 @@ namespace Cubus.Cubes
     public Layout Layout { get; private set; }
     public ReadOnlySpan<T> Span => Data.Span;
 
+    /// <inheritdoc/>
     public override T this[int x, int y, int z]
     {
       [MethodImpl(MethodImplOptions.AggressiveInlining)]
