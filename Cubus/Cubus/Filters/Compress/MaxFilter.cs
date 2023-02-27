@@ -18,7 +18,7 @@ namespace Cubus.Filters
       set => throw new ReadOnlyCubeException(GetType());
     }
 
-    public MaxFilter(Cube<T> cube) : base(cube, cube.Shape.WithLength(1))
+    public MaxFilter(Cube<T> cube) : base(cube, cube.Shape.Length(1))
     {
     }
   }

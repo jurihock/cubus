@@ -18,7 +18,7 @@ namespace Cubus.Filters
       set => throw new ReadOnlyCubeException(GetType());
     }
 
-    public MinFilter(Cube<T> cube) : base(cube, cube.Shape.WithLength(1))
+    public MinFilter(Cube<T> cube) : base(cube, cube.Shape.Length(1))
     {
     }
   }

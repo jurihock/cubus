@@ -2,19 +2,24 @@ using System;
 
 namespace Cubus
 {
-  public class Shape : IEquatable<Shape>
+  public class Shape : IComparable<Shape>, IEquatable<Shape>
   {
     public int Width { get; private set; }
     public int Height { get; private set; }
     public int Length { get; private set; }
     public int Volume { get; private set; }
 
-    public Shape(int width, int height, int length)
+    public Shape(int width, int height, int length = 1)
     {
       Width = width;
       Height = height;
       Length = length;
       Volume = width * height * length;
+    }
+
+    public int CompareTo(Shape other)
+    {
+      return this.Volume - other.Volume;
     }
 
     public bool Equals(Shape other)
@@ -57,16 +62,10 @@ namespace Cubus
       return $"({Width}, ${Height}, ${Length})";
     }
 
-    public Shape WithWidth(int width) => new Shape(width, Height, Length);
-    public Shape WithHeight(int height) => new Shape(Width, height, Length);
-    public Shape WithLength(int length) => new Shape(Width, Height, length);
-
     public static bool operator ==(Shape left, Shape right) => left.Equals(right);
     public static bool operator !=(Shape left, Shape right) => !left.Equals(right);
 
-    public static implicit operator Shape(ValueTuple ___) => new Shape(0, 0, 0);
-    public static implicit operator Shape(ValueTuple<int> w__) => new Shape(w__.Item1, 1, 1);
-    public static implicit operator Shape(ValueTuple<int, int> wh_) => new Shape(wh_.Item1, wh_.Item2, 1);
+    public static implicit operator Shape(ValueTuple<int, int> wh_) => new Shape(wh_.Item1, wh_.Item2);
     public static implicit operator Shape(ValueTuple<int, int, int> whl) => new Shape(whl.Item1, whl.Item2, whl.Item3);
   }
 }

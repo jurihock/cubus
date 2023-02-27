@@ -21,7 +21,7 @@ namespace Cubus.Filters
       set => throw new ReadOnlyCubeException(GetType());
     }
 
-    public AverageFilter(Cube<T> cube) : base(cube, cube.Shape.WithLength(1))
+    public AverageFilter(Cube<T> cube) : base(cube, cube.Shape.Length(1))
     {
     }
 

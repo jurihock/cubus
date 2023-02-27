@@ -23,7 +23,7 @@ namespace Cubus.Filters
     }
 
     public SaturationFilter(Cube<T> cube, (int r, int g, int b) rgb) :
-      base(cube, cube.Shape.WithLength(1))
+      base(cube, cube.Shape.Length(1))
     {
       RGB = rgb;
     }
