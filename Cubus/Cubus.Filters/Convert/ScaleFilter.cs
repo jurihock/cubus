@@ -1,7 +1,6 @@
 using System;
-using Cubus.Exceptions;
-using Cubus.Extensions;
 using System.Runtime.CompilerServices;
+using Cubus.Exceptions;
 
 namespace Cubus.Filters
 {
