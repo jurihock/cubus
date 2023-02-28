@@ -30,8 +30,8 @@ namespace Cubus.Tests
 
       b[0, 1, 2] = 42;
 
-      Assert.ThrowsException<ReadOnlyCubeException>(() =>
-        c[0, 1, 2] = 42);
+      Assert.ThrowsException<ReadOnlyCubeException>(
+        () => c[0, 1, 2] = 42);
 
       Assert.AreEqual(a[0, 1, 2], b[0, 1, 2]);
       Assert.AreEqual(b[0, 1, 2], c[0, 1, 2]);

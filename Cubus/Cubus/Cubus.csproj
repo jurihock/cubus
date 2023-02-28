@@ -6,7 +6,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/jurihock/cubus</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

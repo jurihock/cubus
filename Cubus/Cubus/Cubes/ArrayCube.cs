@@ -7,9 +7,19 @@ namespace Cubus.Cubes
 {
   public class ArrayCube<T> : Cube<T>, IContiguousCube<T>
   {
+    #if NETSTANDARD2_1_OR_GREATER
+
     public T[] Data { get; private set; }
     public Layout Layout { get; private set; }
     public ReadOnlySpan<T> Span => Data.AsSpan<T>();
+
+    #else
+
+    public T[] Data { get; private set; }
+    public Layout Layout { get; private set; }
+    public T[] Span => Data;
+
+    #endif
 
     /// <inheritdoc/>
     public override T this[int x, int y, int z]
@@ -34,7 +44,18 @@ namespace Cubus.Cubes
 
     public ArrayCube(T value, Shape shape, Layout? layout = null) : this(shape, layout)
     {
+      #if NETSTANDARD2_1_OR_GREATER
+
       Array.Fill(Data, value);
+
+      #else
+
+      for (var i = 0; i < Data.Length; i++)
+      {
+        Data[i] = value;
+      }
+
+      #endif
     }
 
     public ArrayCube(T[] data, Shape shape, Layout? layout = null) : this(shape, layout)
@@ -46,6 +67,8 @@ namespace Cubus.Cubes
 
       data.CopyTo(Data, 0);
     }
+
+    #if NETSTANDARD2_1_OR_GREATER
 
     public ArrayCube(Memory<T> data, Shape shape, Layout? layout = null) : this(shape, layout)
     {
@@ -86,5 +109,7 @@ namespace Cubus.Cubes
 
       data.CopyTo(Data);
     }
+
+    #endif
   }
 }
