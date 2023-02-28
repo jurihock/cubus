@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cubus\Cubus.csproj" />
+    <ProjectReference Include="..\Cubus.Filters\Cubus.Filters.csproj" />
   </ItemGroup>
 
 </Project>

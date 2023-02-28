@@ -1,6 +1,5 @@
 ﻿using System;
 using Cubus.Cubes;
-using Cubus.Filters;
 
 namespace Cubus
 {
@@ -52,9 +51,9 @@ namespace Cubus
     /// <summary>
     /// Returns a type converted cube.
     /// </summary>
-    public Cube<Tnew> Cast<Tnew>()
-    {
-      return new CastFilter<T, Tnew>(this);
-    }
+    //public Cube<Tnew> Cast<Tnew>()
+    //{
+    //  return new CastFilter<T, Tnew>(this);
+    //}
   }
 }

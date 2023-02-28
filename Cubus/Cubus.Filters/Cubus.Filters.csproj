@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>Cubus</PackageId>
+    <PackageId>Cubus.Filters</PackageId>
     <PackageVersion>0.1</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/jurihock/cubus</PackageProjectUrl>
@@ -23,11 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Cubes\" />
-    <Folder Include="Exceptions\" />
+    <Folder Include="Color\" />
+    <Folder Include="Compress\" />
+    <Folder Include="Convert\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Layouts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cubus\Cubus.csproj" />
   </ItemGroup>
 
 </Project>

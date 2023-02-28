@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cubus", "Cubus\Cubus.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cubus.Tests", "Cubus.Tests\Cubus.Tests.csproj", "{EC97C720-A997-46A7-88B9-365A51D94B69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cubus.Filters", "Cubus.Filters\Cubus.Filters.csproj", "{70566DC6-A2F5-4F83-91EA-FBC233B9B19F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EC97C720-A997-46A7-88B9-365A51D94B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC97C720-A997-46A7-88B9-365A51D94B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC97C720-A997-46A7-88B9-365A51D94B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70566DC6-A2F5-4F83-91EA-FBC233B9B19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70566DC6-A2F5-4F83-91EA-FBC233B9B19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70566DC6-A2F5-4F83-91EA-FBC233B9B19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70566DC6-A2F5-4F83-91EA-FBC233B9B19F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
