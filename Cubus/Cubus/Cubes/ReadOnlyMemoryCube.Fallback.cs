@@ -2,10 +2,8 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using Cubus.Exceptions;
-using Cubus.Interfaces;
 
-namespace Cubus.Cubes
+namespace Cubus
 {
   public class ReadOnlyMemoryCube<T> : Cube<T>, IContiguousCube<T>, IReadOnlyCube
   {

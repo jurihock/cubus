@@ -1,6 +1,6 @@
 using System;
 
-namespace Cubus.Exceptions
+namespace Cubus
 {
   public class ReadOnlyCubeException : InvalidOperationException
   {

@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Cubus.Cubes
+namespace Cubus
 {
   public class FuncCube<T> : Cube<T>
   {

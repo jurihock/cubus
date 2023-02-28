@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Cubus.Extensions
+namespace Cubus
 {
   public static class ShapeExtensions
   {

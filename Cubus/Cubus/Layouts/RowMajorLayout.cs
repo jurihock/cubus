@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace Cubus.Layouts
+namespace Cubus
 {
   public sealed class RowMajorLayout : Layout
   {

@@ -2,7 +2,7 @@
 
 using System;
 
-namespace Cubus.Interfaces
+namespace Cubus
 {
   public interface IContiguousCube<T>
   {

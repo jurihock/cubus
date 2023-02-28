@@ -1,6 +1,3 @@
-using Cubus.Extensions;
-using Cubus.Layouts;
-
 namespace Cubus.Tests;
 
 [TestClass]

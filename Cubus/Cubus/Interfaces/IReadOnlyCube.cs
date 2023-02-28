@@ -1,6 +1,6 @@
 using System;
 
-namespace Cubus.Interfaces
+namespace Cubus
 {
   public interface IReadOnlyCube
   {

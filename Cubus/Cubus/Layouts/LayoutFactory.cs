@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cubus.Layouts
+namespace Cubus
 {
   public class LayoutFactory
   {

@@ -2,10 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Cubus.Cubes;
-using Cubus.Interfaces;
 
-namespace Cubus.Extensions
+namespace Cubus
 {
   public static class CubeExtensions
   {
