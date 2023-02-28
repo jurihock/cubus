@@ -1,4 +1,4 @@
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0
 
 using System;
 
@@ -7,7 +7,7 @@ namespace Cubus.Interfaces
   public interface IContiguousCube<T>
   {
     Layout Layout { get; }
-    ReadOnlySpan<T> Span { get; }
+    T[] Span { get; }
   }
 }
 

@@ -1,4 +1,4 @@
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0
 
 using System;
 using System.Runtime.CompilerServices;
@@ -11,7 +11,7 @@ namespace Cubus.Cubes
   {
     public T[] Data { get; private set; }
     public Layout Layout { get; private set; }
-    public ReadOnlySpan<T> Span => Data.AsSpan<T>();
+    public T[] Span => Data;
 
     /// <inheritdoc/>
     public override T this[int x, int y, int z]
@@ -50,46 +50,6 @@ namespace Cubus.Cubes
       }
 
       data.CopyTo(Data, 0);
-    }
-
-    public ArrayCube(Memory<T> data, Shape shape, Layout? layout = null) : this(shape, layout)
-    {
-      if (data.Length != Shape.Volume)
-      {
-        throw new InvalidCubeArrayLengthException(nameof(data), data.Length, Shape);
-      }
-
-      data.CopyTo(Data);
-    }
-
-    public ArrayCube(ReadOnlyMemory<T> data, Shape shape, Layout? layout = null) : this(shape, layout)
-    {
-      if (data.Length != Shape.Volume)
-      {
-        throw new InvalidCubeArrayLengthException(nameof(data), data.Length, Shape);
-      }
-
-      data.CopyTo(Data);
-    }
-
-    public ArrayCube(Span<T> data, Shape shape, Layout? layout = null) : this(shape, layout)
-    {
-      if (data.Length != Shape.Volume)
-      {
-        throw new InvalidCubeArrayLengthException(nameof(data), data.Length, Shape);
-      }
-
-      data.CopyTo(Data);
-    }
-
-    public ArrayCube(ReadOnlySpan<T> data, Shape shape, Layout? layout = null) : this(shape, layout)
-    {
-      if (data.Length != Shape.Volume)
-      {
-        throw new InvalidCubeArrayLengthException(nameof(data), data.Length, Shape);
-      }
-
-      data.CopyTo(Data);
     }
   }
 }

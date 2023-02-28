@@ -1,4 +1,4 @@
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0
 
 using System;
 using System.Runtime.CompilerServices;
@@ -7,23 +7,23 @@ using Cubus.Interfaces;
 
 namespace Cubus.Cubes
 {
-  public class MemoryCube<T> : Cube<T>, IContiguousCube<T>
+  public class ReadOnlyMemoryCube<T> : Cube<T>, IContiguousCube<T>, IReadOnlyCube
   {
-    public Memory<T> Data { get; private set; }
+    public T[] Data { get; private set; }
     public Layout Layout { get; private set; }
-    public ReadOnlySpan<T> Span => Data.Span;
+    public T[] Span => Data;
 
     /// <inheritdoc/>
     public override T this[int x, int y, int z]
     {
       [MethodImpl(MethodImplOptions.AggressiveInlining)]
-      get => Data.Span[Layout[x, y, z]];
+      get => Data[Layout[x, y, z]];
 
       [MethodImpl(MethodImplOptions.AggressiveInlining)]
-      set => Data.Span[Layout[x, y, z]] = value;
+      set => throw new ReadOnlyCubeException(GetType());
     }
 
-    public MemoryCube(Memory<T> data, Shape shape, Layout? layout = null) : base(shape)
+    public ReadOnlyMemoryCube(T[] data, Shape shape, Layout? layout = null) : base(shape)
     {
       if (data.Length != Shape.Volume)
       {
@@ -37,10 +37,6 @@ namespace Cubus.Cubes
       {
         throw new InvalidCubeLayoutShapeException(Layout, Shape);
       }
-    }
-
-    public MemoryCube(T[] data, Shape shape, Layout? layout = null) : this(data.AsMemory(), shape, layout)
-    {
     }
   }
 }
