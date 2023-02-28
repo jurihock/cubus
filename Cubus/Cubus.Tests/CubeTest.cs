@@ -1,4 +1,5 @@
 using Cubus.Cubes;
+using Cubus.Exceptions;
 using Cubus.Extensions;
 
 namespace Cubus.Tests
@@ -20,7 +21,7 @@ namespace Cubus.Tests
     }
 
     [TestMethod]
-    public void TestContiguous()
+    public void TestContiguousCube()
     {
       var a = new ArrayCube<int>((1, 2, 3));
       var b = new MemoryCube<int>(a.Data, a.Shape);
@@ -29,8 +30,11 @@ namespace Cubus.Tests
 
       b[0, 1, 2] = 42;
 
+      Assert.ThrowsException<ReadOnlyCubeException>(() =>
+        c[0, 1, 2] = 42);
+
       Assert.AreEqual(a[0, 1, 2], b[0, 1, 2]);
-      Assert.AreEqual(a[0, 1, 2], b[0, 1, 2]);
+      Assert.AreEqual(b[0, 1, 2], c[0, 1, 2]);
       Assert.AreNotEqual(c[0, 1, 2], d[0, 1, 2]);
     }
   }

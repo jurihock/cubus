@@ -6,7 +6,7 @@ namespace Cubus.Tests
   public class ShapeTest
   {
     [TestMethod]
-    public void TestShape()
+    public void TestShapeCreation()
     {
       Shape shape;
 
@@ -33,7 +33,11 @@ namespace Cubus.Tests
       Assert.AreEqual(shape.Height, 0);
       Assert.AreEqual(shape.Length, 0);
       Assert.AreEqual(shape.Volume, 0);
+    }
 
+    [TestMethod]
+    public void TestShapeEquality()
+    {
       var x = new Shape(1, 1);
       var y = new Shape(1, 1, 1);
       var z = new Shape(1, 2, 3);
