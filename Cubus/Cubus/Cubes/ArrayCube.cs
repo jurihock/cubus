@@ -36,10 +36,7 @@ namespace Cubus.Cubes
 
     public ArrayCube(T value, Shape shape, Layout? layout = null) : this(shape, layout)
     {
-      for (var i = 0; i < Data.Length; i++)
-      {
-        Data[i] = value;
-      }
+      Array.Fill(Data, value);
     }
 
     public ArrayCube(T[] data, Shape shape, Layout? layout = null) : this(shape, layout)
