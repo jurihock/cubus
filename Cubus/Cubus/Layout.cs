@@ -9,7 +9,11 @@ namespace Cubus
   {
     public Shape Shape { get; private set; }
 
-    public abstract int this[int x, int y, int z] { get; }
+    public abstract int this[int x, int y, int z]
+    {
+      [MethodImpl(MethodImplOptions.AggressiveInlining)]
+      get;
+    }
 
     protected Layout(Shape shape)
     {
