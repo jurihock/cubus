@@ -47,13 +47,5 @@ namespace Cubus
     {
       return new ArrayCube<T>(value, shape, layout);
     }
-
-    /// <summary>
-    /// Returns a type converted cube.
-    /// </summary>
-    //public Cube<Tnew> Cast<Tnew>()
-    //{
-    //  return new CastFilter<T, Tnew>(this);
-    //}
   }
 }

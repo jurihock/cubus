@@ -19,6 +19,14 @@ namespace Cubus.Extensions
 
     #region [ C ]
 
+    /// <summary>
+    /// Returns a type converted cube.
+    /// </summary>
+    public static Cube<Tnew> Cast<Told, Tnew>(this Cube<Told> cube)
+    {
+      return new CastFilter<Told, Tnew>(cube);
+    }
+
     public static Cube<T> Clamp<T>(this Cube<T> cube, T lo, T hi)
       where T : IComparable
     {
