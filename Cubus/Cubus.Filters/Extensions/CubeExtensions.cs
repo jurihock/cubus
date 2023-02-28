@@ -1,7 +1,6 @@
 using System;
-using Cubus.Filters;
 
-namespace Cubus.Extensions
+namespace Cubus.Filters
 {
   public static class CubeExtensions
   {
