@@ -6,7 +6,7 @@ namespace Cubus.Tests;
 public class ConvertTest
 {
   [TestMethod]
-  public void TestTypeConverter()
+  public void TestTypeConversion()
   {
     var a = Convert<byte>.To<double>()(42);
     var b = Convert<byte>.To<double>(42);
@@ -14,7 +14,7 @@ public class ConvertTest
   }
 
   [TestMethod]
-  public void TestTypeConverterSpeed()
+  public void TestTypeConversionSpeed()
   {
     var n = 1000;
     var foo = new byte[n];
