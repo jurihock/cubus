@@ -23,13 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Color\" />
-    <Folder Include="Compress\" />
-    <Folder Include="Convert\" />
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Cubus\Cubus.csproj" />
   </ItemGroup>
 
