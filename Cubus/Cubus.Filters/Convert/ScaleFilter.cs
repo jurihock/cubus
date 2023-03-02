@@ -9,6 +9,7 @@ namespace Cubus.Filters
     private static readonly Func<double, T> ConvertBackward = Convert<double>.To<T>();
 
     public double Slope { get; private set; }
+    public double InverseSlope { get; private set; }
 
     public override T this[int x, int y, int z]
     {
@@ -16,12 +17,13 @@ namespace Cubus.Filters
       get => ConvertBackward(ConvertForward(Cube[x, y, z]) * Slope);
 
       [MethodImpl(MethodImplOptions.AggressiveInlining)]
-      set => throw new ReadOnlyCubeException(GetType());
+      set => Cube[x, y, z] = ConvertBackward((ConvertForward(value) * InverseSlope));
     }
 
     public ScaleFilter(Cube<T> cube, double slope) : base(cube)
     {
       Slope = slope;
+      InverseSlope = 1 / slope;
     }
   }
 }
