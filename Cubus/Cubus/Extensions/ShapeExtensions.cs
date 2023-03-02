@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -39,6 +40,31 @@ namespace Cubus
       var whl = new[] { shape.Width, shape.Height, shape.Length };
 
       return new Shape(whl[xyz[0]], whl[xyz[1]], whl[xyz[2]]);
+    }
+
+    public static Shape Crop(this Shape shape, (int? start, int? stop)? x, (int? start, int? stop)? y, (int? start, int? stop)? z)
+    {
+      var w = shape.Width;
+      var h = shape.Height;
+      var l = shape.Length;
+
+      var a = x.Limit(w).Mirror(w);
+      var b = y.Limit(h).Mirror(h);
+      var c = z.Limit(l).Mirror(l);
+
+      Debug.Assert(a.Start() >= 0);
+      Debug.Assert(a.Stop() <= w);
+      Debug.Assert(a.Start() <= c.Stop());
+
+      Debug.Assert(b.Start() >= 0);
+      Debug.Assert(b.Stop() <= w);
+      Debug.Assert(b.Start() <= b.Stop());
+
+      Debug.Assert(a.Start() >= 0);
+      Debug.Assert(a.Stop() <= w);
+      Debug.Assert(a.Start() <= c.Stop());
+
+      return new Shape(a.Count(), b.Count(), c.Count());
     }
   }
 }

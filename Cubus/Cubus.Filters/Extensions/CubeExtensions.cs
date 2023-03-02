@@ -32,6 +32,11 @@ namespace Cubus.Filters
       return new ClampFilter<T>(cube, lo, hi);
     }
 
+    public static Cube<T> Crop<T>(this Cube<T> cube, (int? start, int? stop)? x, (int? start, int? stop)? y, (int? start, int? stop)? z = null)
+    {
+      return new CropFilter<T>(cube, x, y, z);
+    }
+
     #endregion
 
     #region [ D ]
