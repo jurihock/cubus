@@ -46,6 +46,12 @@ namespace Cubus.Filters
     #endregion
 
     #region [ F ]
+
+    public static Cube<T> Flip<T>(this Cube<T> cube, params int[] axes)
+    {
+      return new FlipFilter<T>(cube, axes);
+    }
+
     #endregion
 
     #region [ G ]

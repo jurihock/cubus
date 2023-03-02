@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Cubus.Filters.Transform
+namespace Cubus.Filters
 {
   public class TransposeFilter<T> : Filter<T>
   {

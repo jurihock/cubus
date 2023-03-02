@@ -1,6 +1,6 @@
 using System;
 
-namespace Cubus.Filters.Transform
+namespace Cubus.Filters
 {
   public class RotateFilter<T> : Filter<T>
   {
