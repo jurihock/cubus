@@ -6,13 +6,12 @@ namespace Cubus
 {
   public sealed class ColumnMajorLayout : Layout
   {
-    private readonly int[] OffsetX;
-    private readonly int[] OffsetY;
+    private readonly int[] OffsetX, OffsetY;
 
     public override int this[int x, int y, int z]
     {
       [MethodImpl(MethodImplOptions.AggressiveInlining)]
-      get => OffsetX [x] + OffsetY [y] + z;
+      get => OffsetX[x] + OffsetY[y] + z;
     }
 
     public ColumnMajorLayout(Shape shape) : base(shape)

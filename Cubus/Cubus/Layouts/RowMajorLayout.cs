@@ -6,8 +6,7 @@ namespace Cubus
 {
   public sealed class RowMajorLayout : Layout
   {
-    private readonly int[] OffsetX;
-    private readonly int[] OffsetY;
+    private readonly int[] OffsetX, OffsetY;
 
     public override int this[int x, int y, int z]
     {
